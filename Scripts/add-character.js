@@ -54,7 +54,6 @@ function getName (assignedName) {
     mobDrop2 = mobDetails[1],
     mobDrop3 = mobDetails[2];
 
-  // ASSIGN ELEMENT STONES\
 	if (charElement === 'Anemo') {
 		assignElementStones('Vayuda Turqoise');
 	} else if (charElement === 'Hydro') {
@@ -70,6 +69,7 @@ function getName (assignedName) {
 	} else if (charElement === 'Pyro') {
 		assignElementStones('Agnidus Agate');
 	}
+  document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
 
   document.querySelector('.char-name').innerHTML = assignedName;
   document.querySelector('.char-element').innerHTML = charElement;

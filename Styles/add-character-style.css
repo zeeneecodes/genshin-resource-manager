@@ -26,6 +26,12 @@
   padding-bottom: 20px;
 }
 
+.char-profile {
+  border: 1px solid black;
+  width: 220px;
+  height: 150px;
+}
+
 .char-btn {
   padding: 10px;
   padding-right: 15px;

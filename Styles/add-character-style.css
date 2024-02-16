@@ -32,6 +32,15 @@
   height: 150px;
 }
 
+.char-picture {
+  position: relative;
+  display: inline;
+}
+
+.char-pic {
+  height: 100px;
+}
+
 .char-btn {
   padding: 10px;
   padding-right: 15px;

@@ -54,6 +54,23 @@ function getName (assignedName) {
     mobDrop2 = mobDetails[1],
     mobDrop3 = mobDetails[2];
 
+  // ASSIGN ELEMENT STONES\
+	if (charElement === 'Anemo') {
+		assignElementStones('Vayuda Turqoise');
+	} else if (charElement === 'Hydro') {
+		assignElementStones('Varunada Lazurite');
+	} else if (charElement === 'Cryo') {
+		assignElementStones('Shivada Jade');
+	} else if (charElement === 'Dendro') {
+		assignElementStones('Nagadus Emerald');
+	} else if (charElement === 'Geo') {
+		assignElementStones('Prithiva Topaz');
+	} else if (charElement === 'Electro') {
+		assignElementStones('Vajrada Amethyst');
+	} else if (charElement === 'Pyro') {
+		assignElementStones('Agnidus Agate');
+	}
+
   document.querySelector('.char-name').innerHTML = assignedName;
   document.querySelector('.char-element').innerHTML = charElement;
   document.querySelector('.char-region-specialty').innerHTML = regionSpecialty;
@@ -61,5 +78,18 @@ function getName (assignedName) {
   document.querySelector('.char-mobdrop-1').innerHTML = mobDrop1;
   document.querySelector('.char-mobdrop-2').innerHTML = mobDrop2;
   document.querySelector('.char-mobdrop-3').innerHTML = mobDrop3;
- 
+}
+
+function assignElementStones (stoneTitle) {
+  document.querySelector('.char-stone-sliver').innerHTML = `${stoneTitle} Sliver`;
+  //document.querySelector('.element-sliver-img').src = `Images/Stones/${stoneTitle} Sliver.png`;
+
+  document.querySelector('.char-stone-fragment').innerHTML = `${stoneTitle} Fragment`;
+  //document.querySelector('.element-fragment-img').src = `Images/Stones/${stoneTitle} Fragment.png`;
+
+  document.querySelector('.char-stone-chunk').innerHTML = `${stoneTitle} Chunk`;
+  //document.querySelector('.element-chunk-img').src = `Images/Stones/${stoneTitle} Chunk.png`;
+
+  document.querySelector('.char-stone-gemstone').innerHTML = `${stoneTitle} Gemstone`;
+  //document.querySelector('.element-gemstone-img').src = `Images/Stones/${stoneTitle} Gemstone.png`;
 }

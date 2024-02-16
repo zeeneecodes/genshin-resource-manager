@@ -1,0 +1,1 @@
+# genshin-resource-manager

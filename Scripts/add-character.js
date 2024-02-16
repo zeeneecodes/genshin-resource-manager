@@ -37,7 +37,8 @@ function getName (assignedName) {
     charElement = '',
     regionSpecialty = '',
     mobDrop = '',
-    dailyBoss = '';
+    dailyBoss = '',
+    rarity='';
 
   for (let i = 0; i < characterDetails.length; i++) {
     if (characterDetails[i].name === assignedName) {
@@ -45,6 +46,7 @@ function getName (assignedName) {
       regionSpecialty = characterDetails[i].regionSpecialty;
       mobDrop = characterDetails[i].mobDrop;
       dailyBoss = characterDetails[i].dailyBoss;
+      rarity = characterDetails[i].rarity;
     }
   }
 
@@ -69,6 +71,7 @@ function getName (assignedName) {
 	} else if (charElement === 'Pyro') {
 		assignElementStones('Agnidus Agate');
 	}
+  
   document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
 
   document.querySelector('.char-name').innerHTML = assignedName;

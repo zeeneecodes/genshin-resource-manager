@@ -32,9 +32,11 @@
   height: 150px;
 }
 
-.char-picture {
-  position: relative;
+.char-profile-pic-name {
+  position: absolute;
   display: inline;
+  border: 1px solid black;
+  height: 1000px;
 }
 
 .char-pic {
@@ -48,9 +50,23 @@
   margin-top: 85px;
 }
 
+.char-bg {
+  position: absolute;
+  height: 110px;
+  margin-top: -5px;
+  margin-left: -5px;
+  z-index: -1;
+}
+
 .char-btn {
   padding: 10px;
   padding-right: 15px;
   width: 225px;
   margin-top: 5px;
+}
+
+.char-name {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
 }

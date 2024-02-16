@@ -26,7 +26,7 @@
   padding-bottom: 20px;
 }
 
-.char-profile {
+.char-profile-select {
   border: 1px solid black;
   width: 220px;
   height: 150px;
@@ -34,9 +34,7 @@
 
 .char-profile-pic-name {
   position: absolute;
-  display: inline;
-  border: 1px solid black;
-  height: 1000px;
+  display: inline-block;
 }
 
 .char-pic {
@@ -69,4 +67,11 @@
   text-align: center;
   font-size: 20px;
   margin-top: 10px;
+}
+
+.char-element-img {
+  position:absolute;
+  display: inline;
+  margin-left: -100px;
+  height: 30px;
 }

@@ -78,7 +78,6 @@ function getName (assignedName) {
   document.querySelector('.char-element-img').src = `Images/Vision/${charElement}.svg`;
 
   document.querySelector('.char-name').innerHTML = assignedName;
-  document.querySelector('.char-element').innerHTML = charElement;
   document.querySelector('.char-region-specialty').innerHTML = regionSpecialty;
   document.querySelector('.char-daily-boss').innerHTML = dailyBoss;
   document.querySelector('.char-mobdrop-1').innerHTML = mobDrop1;

@@ -25,3 +25,10 @@
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
+.char-btn {
+  padding: 10px;
+  padding-right: 15px;
+  width: 225px;
+  margin-top: 5px;
+}

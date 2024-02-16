@@ -41,6 +41,13 @@
   height: 100px;
 }
 
+.char-rarity {
+  position: absolute;
+  width: 80px;
+  margin-left: -95px;
+  margin-top: 85px;
+}
+
 .char-btn {
   padding: 10px;
   padding-right: 15px;

@@ -73,6 +73,7 @@ function getName (assignedName) {
 	}
   
   document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
+  document.querySelector('.char-rarity').src = `Images/Rarity/${rarity}.png`;
 
   document.querySelector('.char-name').innerHTML = assignedName;
   document.querySelector('.char-element').innerHTML = charElement;

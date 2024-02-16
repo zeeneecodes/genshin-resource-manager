@@ -33,10 +33,11 @@ charButton.forEach((name) => {
 });
 
 function getName (assignedName) {
-  let charElement = '';
-  let regionSpecialty = '';
-  let mobDrop = '';
-  let dailyBoss = '';
+  let
+    charElement = '',
+    regionSpecialty = '',
+    mobDrop = '',
+    dailyBoss = '';
 
   for (let i = 0; i < characterDetails.length; i++) {
     if (characterDetails[i].name === assignedName) {
@@ -46,15 +47,19 @@ function getName (assignedName) {
       dailyBoss = characterDetails[i].dailyBoss;
     }
   }
-  document.querySelector('.right-container').innerHTML = 
-  `
-    <p class="character-details">Name: ${assignedName}</p>
-    <p class="character-details">Vision: ${charElement}</p>
-    <p class="character-details"> Region Specialty: ${regionSpecialty}</p>
-    <p class="character-details">Daily Boss: ${dailyBoss}</p>
-    <hr>
-  `;
+
   const mobDetails = easyEnemyDetails[mobDrop];
-  console.log(mobDetails);
+  let
+    mobDrop1 = mobDetails[0],
+    mobDrop2 = mobDetails[1],
+    mobDrop3 = mobDetails[2];
+
+  document.querySelector('.char-name').innerHTML = assignedName;
+  document.querySelector('.char-element').innerHTML = charElement;
+  document.querySelector('.char-region-specialty').innerHTML = regionSpecialty;
+  document.querySelector('.char-daily-boss').innerHTML = dailyBoss;
+  document.querySelector('.char-mobdrop-1').innerHTML = mobDrop1;
+  document.querySelector('.char-mobdrop-2').innerHTML = mobDrop2;
+  document.querySelector('.char-mobdrop-3').innerHTML = mobDrop3;
  
 }

@@ -75,3 +75,44 @@
   margin-left: -100px;
   height: 30px;
 }
+
+.all-char-details {
+  padding-top: 10px;
+}
+
+.detail-container {
+  border: 1px solid black;
+  height: 35px;
+  width: 220px;
+  overflow: hidden;
+}
+
+.imgContainer {
+  border: 1px solid black;
+  width: 35px;
+  height: 35px;
+  float: left;
+}
+
+.imgContainer img {
+  width: 30px;
+  height: 30px;
+  padding: 3px;
+}
+
+.details-txt-container {
+  border: 1px solid black;
+  height: 35px;
+  width: 140px;
+  float: left;
+  word-wrap: break-word;
+  font-size: 10px; 
+  padding-top: 10px;
+}
+
+.materials-number {
+  padding-top: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+

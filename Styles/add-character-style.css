@@ -81,14 +81,12 @@
 }
 
 .detail-container {
-  border: 1px solid black;
   height: 35px;
   width: 220px;
   overflow: hidden;
 }
 
 .imgContainer {
-  border: 1px solid black;
   width: 35px;
   height: 35px;
   float: left;
@@ -101,12 +99,13 @@
 }
 
 .details-txt-container {
-  border: 1px solid black;
   height: 35px;
   width: 140px;
   float: left;
   word-wrap: break-word;
   font-size: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .materials-number {

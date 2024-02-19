@@ -31,6 +31,7 @@ let characterName = '';
 charButton.forEach((name) => {
   name.addEventListener('click', () => {
     getName(name.innerHTML);
+    resetValues();
     computeMaterials(name.innerHTML);
   });
 });
@@ -119,8 +120,21 @@ const herosWit = 20000;
     totalmobDrop3 = 0,
     totalMora = 0;
 
-const userInputStart = 70;
+const userInputStart = 1;
 const userinputEnd = 90;
+
+function resetValues() {
+  totalSliver = 0,
+  totalFragment = 0,
+  totalChunk = 0,
+  totalGem = 0,
+  totalDailyBoss = 0,
+  totalRegionSpecialty = 0,
+  totalmobDrop1 = 0,
+  totalmobDrop2 = 0,
+  totalmobDrop3 = 0,
+  totalMora = 0;
+}
 
 // array for ascension functions
 const functionArr = [ascension1, ascension2, ascension3, ascension4, ascension5, ascension6];

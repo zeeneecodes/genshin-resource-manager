@@ -203,7 +203,6 @@ function calculateAscension(startAscension,endAscension){
 
 function ascension1 () {
 	let {ascension1:{stones,regionSpecialty,mobDrop,mora}} = characterAscenscionInfo;
-
 		totalSliver += stones[0];
 		totalRegionSpecialty += regionSpecialty;
 		totalmobDrop1 += mobDrop[0];
@@ -259,4 +258,3 @@ function ascension6() {
 	totalmobDrop3 += mobDrop[2];
 	totalMora += mora;
 }
-

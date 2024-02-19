@@ -1,5 +1,5 @@
 const characterAscenscionInfo = {
-	ascenscion1: {
+	ascension1: {
 		stones:[1,0,0,0],
 		dailyBoss:0,
 		regionSpecialty:3,
@@ -7,7 +7,7 @@ const characterAscenscionInfo = {
 		mobDropRating:1,
 		mora:20000
 	},
-	ascenscion2: {
+	ascension2: {
 		stones:[0,3,0,0],
 		dailyBoss:2,
 		regionSpecialty:10,
@@ -15,7 +15,7 @@ const characterAscenscionInfo = {
 		mobDropRating:1,
 		mora:20000
 	},
-	ascenscion3: {
+	ascension3: {
 		stones:[0,6,0,0],
 		dailyBoss:4,
 		regionSpecialty:20,
@@ -23,7 +23,7 @@ const characterAscenscionInfo = {
 		mobDropRating:2,
 		mora:40000
 	},
-	ascenscion4: {
+	ascension4: {
 		stones:[0,0,3,0],
 		dailyBoss:8,
 		regionSpecialty:30,
@@ -31,7 +31,7 @@ const characterAscenscionInfo = {
 		mobDropRating:2,
 		mora:80000
 	},
-	ascenscion5: {
+	ascension5: {
 		stones:[0,0,6,0],
 		dailyBoss:12,
 		regionSpecialty:45,
@@ -39,7 +39,7 @@ const characterAscenscionInfo = {
 		mobDropRating:3,
 		mora:100000
 	},
-	ascenscion6: {
+	ascension6: {
 		stones:[0,0,0,6],
 		dailyBoss:20,
 		regionSpecialty:60,

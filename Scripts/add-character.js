@@ -1,3 +1,5 @@
+// SELECT CHARACTER
+
 const characterSelection = document.querySelector('.left-container');
 
 // Get all character names
@@ -29,6 +31,7 @@ let characterName = '';
 charButton.forEach((name) => {
   name.addEventListener('click', () => {
     getName(name.innerHTML);
+    computeMaterials(name.innerHTML);
   });
 });
 
@@ -102,4 +105,41 @@ function assignElementStones (stoneTitle) {
   
   document.querySelector('.char-stone-gemstone').innerHTML = `${stoneTitle} Gemstone`;
   document.querySelector('.char-stone-gemstone-img').src = `Images/Stones/${stoneTitle} Gemstone.png`;
+}
+
+// COMPUTE MATERIALS NEEDED
+function computeMaterials (character) {
+  const herosWit = 20000;
+  let
+    totalSliver = 0,
+    totalFragment = 0,
+    totalChunk = 0,
+    totalGem = 0,
+    totalDailyBoss = 0,
+    totalRegionSpecialty = 0,
+    totalmobDrop1 = 0,
+    totalmobDrop2 = 0,
+    totalmobDrop3 = 0,
+    totalMora = 0;
+
+  const userInputStart = 70;
+  const userinputEnd = 90;
+
+
+  // Calculate Mora and Hero's Wit
+  let
+    levelToAdd = 0,
+    startingLvl = userInputStart - 1,
+    endlvl = userinputEnd - 1;
+
+  const getTotalLevel = charTotalLevelArr[startingLvl];
+
+  for (let i = startingLvl; i < endlvl; i++) {
+    levelToAdd += charLevelArray[i];
+  }
+
+  //const totalLevel = level + getTotalLevel;
+  const totalHerosWit = Math.round(levelToAdd/herosWit);
+  totalMora += totalHerosWit * 4000;
+  document.querySelector('.char-mora').innerHTML = totalMora.toLocaleString();
 }

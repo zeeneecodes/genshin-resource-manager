@@ -79,22 +79,27 @@ function getName (assignedName) {
 
   document.querySelector('.char-name').innerHTML = assignedName;
   document.querySelector('.char-region-specialty').innerHTML = regionSpecialty;
+  document.querySelector('.char-region-specialty-img').src = `Images/Region Specialty/${regionSpecialty}.png`;
   document.querySelector('.char-daily-boss').innerHTML = dailyBoss;
+  document.querySelector('.char-daily-boss-img').src = `Images/Daily Boss/${dailyBoss}.png`;
   document.querySelector('.char-mobdrop-1').innerHTML = mobDrop1;
+  document.querySelector('.char-mobdrop-1-img').src = `Images/Easy Enemies/${mobDrop1}.png`;
   document.querySelector('.char-mobdrop-2').innerHTML = mobDrop2;
+  document.querySelector('.char-mobdrop-2-img').src = `Images/Easy Enemies/${mobDrop2}.png`;
   document.querySelector('.char-mobdrop-3').innerHTML = mobDrop3;
+  document.querySelector('.char-mobdrop-3-img').src = `Images/Easy Enemies/${mobDrop3}.png`;
 }
 
 function assignElementStones (stoneTitle) {
   document.querySelector('.char-stone-sliver').innerHTML = `${stoneTitle} Sliver`;
-  //document.querySelector('.element-sliver-img').src = `Images/Stones/${stoneTitle} Sliver.png`;
-
+  document.querySelector('.char-stone-sliver-img').src = `Images/Stones/${stoneTitle} Sliver.png`;
+  
   document.querySelector('.char-stone-fragment').innerHTML = `${stoneTitle} Fragment`;
-  //document.querySelector('.element-fragment-img').src = `Images/Stones/${stoneTitle} Fragment.png`;
-
+  document.querySelector('.char-stone-fragment-img').src = `Images/Stones/${stoneTitle} Fragment.png`;
+  
   document.querySelector('.char-stone-chunk').innerHTML = `${stoneTitle} Chunk`;
-  //document.querySelector('.element-chunk-img').src = `Images/Stones/${stoneTitle} Chunk.png`;
-
+  document.querySelector('.char-stone-chunk-img').src = `Images/Stones/${stoneTitle} Chunk.png`;
+  
   document.querySelector('.char-stone-gemstone').innerHTML = `${stoneTitle} Gemstone`;
-  //document.querySelector('.element-gemstone-img').src = `Images/Stones/${stoneTitle} Gemstone.png`;
+  document.querySelector('.char-stone-gemstone-img').src = `Images/Stones/${stoneTitle} Gemstone.png`;
 }

@@ -1,6 +1,6 @@
 const characterSelection = document.querySelector('.left-container');
 
-// Get all character names and push into a new array
+// Get all character names
 let
   charactersArr = [],
   characters = '';
@@ -21,7 +21,7 @@ charactersArr.forEach((chars) => {
 document.querySelector('.left-container').innerHTML = characters;
 
 
-// Event Listener will get the character name from clicked button and assign them to their respecitive <p> elements
+// Event Listener to get the character name from clicked button and assign them to their respective elements
 
 const charButton = document.querySelectorAll('.char-btn');
 let characterName = '';
@@ -56,21 +56,21 @@ function getName (assignedName) {
     mobDrop2 = mobDetails[1],
     mobDrop3 = mobDetails[2];
 
-	if (charElement === 'Anemo') {
-		assignElementStones('Vayuda Turqoise');
-	} else if (charElement === 'Hydro') {
-		assignElementStones('Varunada Lazurite');
-	} else if (charElement === 'Cryo') {
-		assignElementStones('Shivada Jade');
-	} else if (charElement === 'Dendro') {
-		assignElementStones('Nagadus Emerald');
-	} else if (charElement === 'Geo') {
-		assignElementStones('Prithiva Topaz');
-	} else if (charElement === 'Electro') {
-		assignElementStones('Vajrada Amethyst');
-	} else if (charElement === 'Pyro') {
-		assignElementStones('Agnidus Agate');
-	}
+  if (charElement === 'Anemo') {
+    assignElementStones('Vayuda Turqoise');
+  } else if (charElement === 'Hydro') {
+    assignElementStones('Varunada Lazurite');
+  } else if (charElement === 'Cryo') {
+    assignElementStones('Shivada Jade');
+  } else if (charElement === 'Dendro') {
+    assignElementStones('Nagadus Emerald');
+  } else if (charElement === 'Geo') {
+    assignElementStones('Prithiva Topaz');
+  } else if (charElement === 'Electro') {
+    assignElementStones('Vajrada Amethyst');
+  } else if (charElement === 'Pyro') {
+    assignElementStones('Agnidus Agate');
+  }
   
   document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
   document.querySelector('.char-rarity').src = `Images/Rarity/${rarity}.png`;

@@ -15,6 +15,7 @@
   padding-left: 25px;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 1%;
 }
 
 .right-container {
@@ -24,10 +25,11 @@
   padding-left: 25px;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 1%;
 }
 
 .char-profile-select {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 220px;
   height: 150px;
 }

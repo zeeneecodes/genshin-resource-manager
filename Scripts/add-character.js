@@ -1,8 +1,8 @@
-// SELECT CHARACTER
-
 const characterSelection = document.querySelector('.left-container');
 
-// Get all character names
+// let the code list all the
+// character names each buttons
+
 let
   charactersArr = [],
   characters = '';
@@ -13,35 +13,53 @@ characterDetails.forEach((character) => {
 
 charactersArr.sort();
 
-// add all character names to buttons
-
 charactersArr.forEach((chars) => {
   characters += `
     <button class="char-btn">${chars}</button>
   `
 });
+
 document.querySelector('.left-container').innerHTML = characters;
 
 
+// variables for characters and calculate button
 
-// Event Listener to get the character name from clicked button and assign them to their respective elements
+const charButton = document.querySelectorAll('.char-btn'),
+  calculateButton = document.querySelector('.calculate');
+let characterName = '',
+  startValue = document.querySelector('.slider-start-level'),
+  endValue = document.querySelector('.slider-end-level');
 
-const charButton = document.querySelectorAll('.char-btn');
-const calculateButton = document.querySelector('.calculate');
-let characterName = '';
+const herosWit = 20000;
+let
+  totalSliver = 0,
+  totalFragment = 0,
+  totalChunk = 0,
+  totalGem = 0,
+  totalDailyBoss = 0,
+  totalRegionSpecialty = 0,
+  totalmobDrop1 = 0,
+  totalmobDrop2 = 0,
+  totalmobDrop3 = 0,
+  totalMora = 0,
+  startAscension = 0,
+  endAscension = 0;
 
-let startValue = document.querySelector('.slider-start-level');
-let endValue = document.querySelector('.slider-end-level');
+const functionArr = [ascension1, ascension2, ascension3, ascension4, ascension5, ascension6];
 
-  // Range slider
-  startValue.oninput = () => {
-    document.querySelector('.txt-start-level').innerHTML = `From Level: ${startValue.value}`;
-  };
 
-  endValue.oninput = () => {
-    document.querySelector('.txt-end-level').innerHTML = `To Level: ${endValue.value}`;
-  };
+// Range slider has to show the value
+// because user can't see the backend
 
+startValue.oninput = () => {
+  document.querySelector('.txt-start-level').innerHTML = `From Level: ${startValue.value}`;
+};
+
+endValue.oninput = () => {
+  document.querySelector('.txt-end-level').innerHTML = `To Level: ${endValue.value}`;
+};
+
+// user will now click on the buttons
 charButton.forEach((name) => {
   name.addEventListener('click', () => {
     showCharacter(name.innerHTML);
@@ -51,7 +69,6 @@ charButton.forEach((name) => {
 
       showMaterials(name.innerHTML);
       resetValues();
-      //computeMaterials(name.innerHTML);
       startlvl = startValue.value;
       endlvl = endValue.value;
       computeMaterials(startlvl,endlvl);
@@ -60,7 +77,10 @@ charButton.forEach((name) => {
   });
 });
 
-function showCharacter (assignedName) {
+
+// FUNCTIONS
+
+function showCharacter(assignedName) {
   let
     charElement = '',
     rarity = '';
@@ -117,13 +137,7 @@ function showMaterials(assignedName) {
   } else if (charElement === 'Pyro') {
     assignElementStones('Agnidus Agate');
   }
-  
-  // document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
-  // document.querySelector('.char-rarity').src = `Images/Rarity/${rarity}.png`;
-  // document.querySelector('.char-bg').src = `Images/General/${rarity}.png`;
-  // document.querySelector('.char-element-img').src = `Images/Vision/${charElement}.svg`;
 
-  // document.querySelector('.char-name').innerHTML = assignedName;
   document.querySelector('.char-region-specialty').innerHTML = regionSpecialty;
   document.querySelector('.char-region-specialty-img').src = `Images/Region Specialty/${regionSpecialty}.png`;
   document.querySelector('.char-daily-boss').innerHTML = dailyBoss;
@@ -136,7 +150,7 @@ function showMaterials(assignedName) {
   document.querySelector('.char-mobdrop-3-img').src = `Images/Easy Enemies/${mobDrop3}.png`;
 }
 
-function assignElementStones (stoneTitle) {
+function assignElementStones(stoneTitle) {
   document.querySelector('.char-stone-sliver').innerHTML = `${stoneTitle} Sliver`;
   document.querySelector('.char-stone-sliver-img').src = `Images/Stones/${stoneTitle} Sliver.png`;
   document.querySelector('.char-stone-fragment').innerHTML = `${stoneTitle} Fragment`;
@@ -148,64 +162,9 @@ function assignElementStones (stoneTitle) {
 }
 
 
-// COMPUTE MATERIALS NEEDED
-const herosWit = 20000;
-  let
-    totalSliver = 0,
-    totalFragment = 0,
-    totalChunk = 0,
-    totalGem = 0,
-    totalDailyBoss = 0,
-    totalRegionSpecialty = 0,
-    totalmobDrop1 = 0,
-    totalmobDrop2 = 0,
-    totalmobDrop3 = 0,
-    totalMora = 0;
-
-// let userInputStart = 1;
-// let userinputEnd = 90;
-
-
-
-// function showStartValue() {
-//   let startlevel = document.querySelector('.slider-start-level').value;
-//   document.querySelector('.txt-start-level').innerHTML = `From Level ${startlevel}`;
-//   assignUserInput(startlevel,'start');
-// }
-// function showEndValue() {
-//   let endlevel = document.querySelector('.slider-end-level').value;
-//   document.querySelector('.txt-end-level').innerHTML = `To Level ${endlevel}`;
-//   assignUserInput(endlevel,'end');
-// }
-
-// let levelStartUserInput = document.querySelector('.slider-start-level');
-// let levelEndUserInput = document.querySelector('.slider-end-level');
-
-// levelStartUserInput.oninput = () => {
-//   document.querySelector('.txt-start-level').innerHTML = `From Level ${levelStartUserInput.value}`;
-//   // userInputStart = levelStartUserInput.value;
-//   // yeah(levelStartUserInput.value);
-//   start();
-// }
-
-// levelEndUserInput.oninput = () => {
-//   document.querySelector('.txt-end-level').innerHTML = `To Level ${levelEndUserInput.value}`;
-//   yeah(levelEndUserInput.value);
-// }
-
-
-
-
-// array for ascension functions
-const functionArr = [ascension1, ascension2, ascension3, ascension4, ascension5, ascension6];
-
-// calculate ascension materials for selected character
-let startAscension = 0;
-let endAscension = 0;
 
 
 function computeMaterials(start,end) {
-  // Calculate Mora and Hero's Wit
   let
     levelToAdd = 0,
     startingLvl = start - 1,
@@ -222,11 +181,11 @@ function computeMaterials(start,end) {
   document.querySelector('.char-mora-img').src = `Images/General/Mora.png`;
   document.querySelector('.char-mora').innerHTML = totalMora.toLocaleString();
 
-  assignLevel();
+  assignAscension();
   calculateAscension(startAscension,endAscension);
 }
 
-function assignLevel(){
+function assignAscension(){
   //function to assign the selected start level and selected end level to an ascension phase
   for (let i = 0; i < 100; i++){
       if (i === userInputStart) {

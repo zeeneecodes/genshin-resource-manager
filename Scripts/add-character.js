@@ -23,35 +23,40 @@ charactersArr.forEach((chars) => {
 document.querySelector('.left-container').innerHTML = characters;
 
 
+
 // Event Listener to get the character name from clicked button and assign them to their respective elements
 
 const charButton = document.querySelectorAll('.char-btn');
 const calculateButton = document.querySelector('.calculate');
 let characterName = '';
-    
+
+let startValue = document.querySelector('.slider-start-level');
+let endValue = document.querySelector('.slider-end-level');
+
+  // Range slider
+  startValue.oninput = () => {
+    document.querySelector('.txt-start-level').innerHTML = `From Level: ${startValue.value}`;
+  };
+
+  endValue.oninput = () => {
+    document.querySelector('.txt-end-level').innerHTML = `To Level: ${endValue.value}`;
+  };
+
 charButton.forEach((name) => {
   name.addEventListener('click', () => {
     showCharacter(name.innerHTML);
     calculateButton.addEventListener('click', () => {
+      let startlvl = '';
+      let endlvl = '';
+
       showMaterials(name.innerHTML);
       resetValues();
-      computeMaterials(name.innerHTML);
-      let startlvl = 0;
-      let html = document.querySelector('.slider-end-level');
-      startlvl = html.value;
-      console.log(startlvl);
+      //computeMaterials(name.innerHTML);
+      startlvl = startValue.value;
+      endlvl = endValue.value;
+      computeMaterials(startlvl,endlvl);
     })
     resetMaterialsHTML();
-    // getName(name.innerHTML);
-    // resetValues();
-    // computeMaterials(name.innerHTML);
-    // slider = document.querySelector('.slider');
-    // slider.innerHTML = `
-    // <p class="txt-start-level">From Level 1</p>
-    // <input type="range" min="1" max="90" value="1" class="slider-start-level">
-    // <p class="txt-end-level">To Level 90</p>
-    // <input type="range" min="1" max="90" value="90" class="slider-end-level">
-    // `;
   });
 });
 
@@ -73,7 +78,7 @@ function showCharacter (assignedName) {
     document.querySelector('.char-name').innerHTML = assignedName;
 }
 
-function showMaterials (assignedName) {
+function showMaterials(assignedName) {
   let
     charElement = '',
     regionSpecialty = '',
@@ -157,8 +162,8 @@ const herosWit = 20000;
     totalmobDrop3 = 0,
     totalMora = 0;
 
-let userInputStart = 1;
-let userinputEnd = 90;
+// let userInputStart = 1;
+// let userinputEnd = 90;
 
 
 
@@ -195,26 +200,16 @@ let userinputEnd = 90;
 const functionArr = [ascension1, ascension2, ascension3, ascension4, ascension5, ascension6];
 
 // calculate ascension materials for selected character
-
-function assignUserInput (level,type) {
-  if (type === 'start') {
-    userInputStart = level;
-  } else if (type === 'end') {
-    userinputEnd = level;
-    console.log(userinputEnd);
-  }
-}
-
 let startAscension = 0;
 let endAscension = 0;
 
 
-function computeMaterials (character) {
+function computeMaterials(start,end) {
   // Calculate Mora and Hero's Wit
   let
     levelToAdd = 0,
-    startingLvl = userInputStart - 1,
-    endlvl = userinputEnd - 1;
+    startingLvl = start - 1,
+    endlvl = end - 1;
 
   for (let i = startingLvl; i < endlvl; i++) {
     levelToAdd += charLevelArray[i];

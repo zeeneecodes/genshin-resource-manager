@@ -26,33 +26,54 @@ document.querySelector('.left-container').innerHTML = characters;
 // Event Listener to get the character name from clicked button and assign them to their respective elements
 
 const charButton = document.querySelectorAll('.char-btn');
+const calculateButton = document.querySelector('.calculate');
 let characterName = '';
     
 charButton.forEach((name) => {
   name.addEventListener('click', () => {
-    getName(name.innerHTML);
-    resetValues();
-    computeMaterials(name.innerHTML);
-    slider = document.querySelector('.slider');
-    slider.innerHTML = `
-    <p class="txt-start-level">From Level 1</p>
-    <input type="range" min="1" max="90" value="1" class="slider-start-level" oninput="showStartValue()">
-    <p class="txt-end-level">To Level 90</p>
-    <input type="range" min="1" max="90" value="90" class="slider-end-level" oninput="showEndValue()">
-    `;
+    showCharacter(name.innerHTML);
+    
+    calculateButton.addEventListener('click', () => {
+      showMaterials(name.innerHTML);
+      resetValues();
+      computeMaterials(name.innerHTML);
+      let startlvl = 0;
+      let html = document.querySelector('.slider-end-level');
+      startlvl = html.value;
+      console.log(startlvl);
+    })
+    // getName(name.innerHTML);
+    // resetValues();
+    // computeMaterials(name.innerHTML);
+    // slider = document.querySelector('.slider');
+    // slider.innerHTML = `
+    // <p class="txt-start-level">From Level 1</p>
+    // <input type="range" min="1" max="90" value="1" class="slider-start-level">
+    // <p class="txt-end-level">To Level 90</p>
+    // <input type="range" min="1" max="90" value="90" class="slider-end-level">
+    // `;
   });
 });
 
-function showStartValue() {
-  let level = document.querySelector('.slider-start-level').value;
-  document.querySelector('.txt-start-level').innerHTML = `From Level ${level}`;
-}
-function showEndValue() {
-  let level = document.querySelector('.slider-end-level').value;
-  document.querySelector('.txt-end-level').innerHTML = `To Level ${level}`;
+function showCharacter (assignedName) {
+  let
+    charElement = '',
+    rarity = '';
+
+    for (let i = 0; i < characterDetails.length; i++) {
+      if (characterDetails[i].name === assignedName) {
+        charElement = characterDetails[i].vision;
+        rarity = characterDetails[i].rarity;
+      }
+    }
+    document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
+    document.querySelector('.char-rarity').src = `Images/Rarity/${rarity}.png`;
+    document.querySelector('.char-bg').src = `Images/General/${rarity}.png`;
+    document.querySelector('.char-element-img').src = `Images/Vision/${charElement}.svg`;
+    document.querySelector('.char-name').innerHTML = assignedName;
 }
 
-function getName (assignedName) {
+function showMaterials (assignedName) {
   let
     charElement = '',
     regionSpecialty = '',
@@ -92,12 +113,12 @@ function getName (assignedName) {
     assignElementStones('Agnidus Agate');
   }
   
-  document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
-  document.querySelector('.char-rarity').src = `Images/Rarity/${rarity}.png`;
-  document.querySelector('.char-bg').src = `Images/General/${rarity}.png`;
-  document.querySelector('.char-element-img').src = `Images/Vision/${charElement}.svg`;
+  // document.querySelector('.char-pic').src = `Images/Characters/${assignedName}.png`;
+  // document.querySelector('.char-rarity').src = `Images/Rarity/${rarity}.png`;
+  // document.querySelector('.char-bg').src = `Images/General/${rarity}.png`;
+  // document.querySelector('.char-element-img').src = `Images/Vision/${charElement}.svg`;
 
-  document.querySelector('.char-name').innerHTML = assignedName;
+  // document.querySelector('.char-name').innerHTML = assignedName;
   document.querySelector('.char-region-specialty').innerHTML = regionSpecialty;
   document.querySelector('.char-region-specialty-img').src = `Images/Region Specialty/${regionSpecialty}.png`;
   document.querySelector('.char-daily-boss').innerHTML = dailyBoss;
@@ -136,8 +157,8 @@ const herosWit = 20000;
     totalmobDrop3 = 0,
     totalMora = 0;
 
-const userInputStart = 1;
-const userinputEnd = 90;
+let userInputStart = 1;
+let userinputEnd = 90;
 
 function resetValues() {
   totalSliver = 0,
@@ -152,10 +173,49 @@ function resetValues() {
   totalMora = 0;
 }
 
+// function showStartValue() {
+//   let startlevel = document.querySelector('.slider-start-level').value;
+//   document.querySelector('.txt-start-level').innerHTML = `From Level ${startlevel}`;
+//   assignUserInput(startlevel,'start');
+// }
+// function showEndValue() {
+//   let endlevel = document.querySelector('.slider-end-level').value;
+//   document.querySelector('.txt-end-level').innerHTML = `To Level ${endlevel}`;
+//   assignUserInput(endlevel,'end');
+// }
+
+// let levelStartUserInput = document.querySelector('.slider-start-level');
+// let levelEndUserInput = document.querySelector('.slider-end-level');
+
+// levelStartUserInput.oninput = () => {
+//   document.querySelector('.txt-start-level').innerHTML = `From Level ${levelStartUserInput.value}`;
+//   // userInputStart = levelStartUserInput.value;
+//   // yeah(levelStartUserInput.value);
+//   start();
+// }
+
+// levelEndUserInput.oninput = () => {
+//   document.querySelector('.txt-end-level').innerHTML = `To Level ${levelEndUserInput.value}`;
+//   yeah(levelEndUserInput.value);
+// }
+
+
+
+
 // array for ascension functions
 const functionArr = [ascension1, ascension2, ascension3, ascension4, ascension5, ascension6];
 
 // calculate ascension materials for selected character
+
+function assignUserInput (level,type) {
+  if (type === 'start') {
+    userInputStart = level;
+  } else if (type === 'end') {
+    userinputEnd = level;
+    console.log(userinputEnd);
+  }
+}
+
 let startAscension = 0;
 let endAscension = 0;
 

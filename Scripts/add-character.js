@@ -33,8 +33,24 @@ charButton.forEach((name) => {
     getName(name.innerHTML);
     resetValues();
     computeMaterials(name.innerHTML);
+    slider = document.querySelector('.slider');
+    slider.innerHTML = `
+    <p class="txt-start-level">From Level 1</p>
+    <input type="range" min="1" max="90" value="1" class="slider-start-level" oninput="showStartValue()">
+    <p class="txt-end-level">To Level 90</p>
+    <input type="range" min="1" max="90" value="90" class="slider-end-level" oninput="showEndValue()">
+    `;
   });
 });
+
+function showStartValue() {
+  let level = document.querySelector('.slider-start-level').value;
+  document.querySelector('.txt-start-level').innerHTML = `From Level ${level}`;
+}
+function showEndValue() {
+  let level = document.querySelector('.slider-end-level').value;
+  document.querySelector('.txt-end-level').innerHTML = `To Level ${level}`;
+}
 
 function getName (assignedName) {
   let

@@ -21,7 +21,7 @@
 .right-container {
   border: 1px solid rgba(0, 0, 0, 0.8);
   margin-left: 50px;
-  width: 250px;
+  width: 270px;
   padding-left: 25px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -29,23 +29,36 @@
 }
 
 .char-profile-select {
-  border: 1px solid black;
-  width: 220px;
+  /* border: 1px solid black; */
+  width: 250px;
   height: 150px;
   display: grid;
-  grid-template-columns: 100px 50px;
+  grid-template-columns: 100px auto;
 }
 
 .slider {
-  border: 1px solid black;
-  height: 10px;
-  width: 10px;
+  /* border: 1px solid black; */
+  height: 50px;
   display: inline-block;
+  align-items: center;
+}
+
+.slider-start-level, .slider-end-level {
+  width: 100px;
+  margin-top: 15px;
+}
+
+.txt-start-level, .txt-end-level {
+  margin-left: 5px;
+  position: absolute;
+  font-size: 15px;
+  margin-top: -1px;
 }
 
 .char-profile-pic-name {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   /* position: absolute; */
+  width: 101px;
   height: 148px;
 }
 
@@ -56,8 +69,8 @@
 .char-rarity {
   position: absolute;
   width: 80px;
-  margin-left: 8px;
-  margin-top: -20px;
+  margin-left: -90px;
+  margin-top: 80px;
 }
 
 .char-bg {
@@ -83,7 +96,8 @@
 
 .char-element-img {
   position:absolute;
-  margin-top: -105px;
+  margin-top: 1px;
+  margin-left: -95px;
   height: 30px;
 }
 

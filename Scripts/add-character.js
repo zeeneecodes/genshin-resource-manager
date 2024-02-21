@@ -32,7 +32,6 @@ let characterName = '';
 charButton.forEach((name) => {
   name.addEventListener('click', () => {
     showCharacter(name.innerHTML);
-    
     calculateButton.addEventListener('click', () => {
       showMaterials(name.innerHTML);
       resetValues();
@@ -42,6 +41,7 @@ charButton.forEach((name) => {
       startlvl = html.value;
       console.log(startlvl);
     })
+    resetMaterialsHTML();
     // getName(name.innerHTML);
     // resetValues();
     // computeMaterials(name.innerHTML);
@@ -160,18 +160,7 @@ const herosWit = 20000;
 let userInputStart = 1;
 let userinputEnd = 90;
 
-function resetValues() {
-  totalSliver = 0,
-  totalFragment = 0,
-  totalChunk = 0,
-  totalGem = 0,
-  totalDailyBoss = 0,
-  totalRegionSpecialty = 0,
-  totalmobDrop1 = 0,
-  totalmobDrop2 = 0,
-  totalmobDrop3 = 0,
-  totalMora = 0;
-}
+
 
 // function showStartValue() {
 //   let startlevel = document.querySelector('.slider-start-level').value;
@@ -347,4 +336,44 @@ function ascension6() {
 	totalRegionSpecialty += regionSpecialty;
 	totalmobDrop3 += mobDrop[2];
 	totalMora += mora;
+}
+
+// RESET EVERYTHING
+
+function resetValues() {
+  totalSliver = 0,
+  totalFragment = 0,
+  totalChunk = 0,
+  totalGem = 0,
+  totalDailyBoss = 0,
+  totalRegionSpecialty = 0,
+  totalmobDrop1 = 0,
+  totalmobDrop2 = 0,
+  totalmobDrop3 = 0,
+  totalMora = 0;
+}
+
+function resetMaterialsHTML() {
+  document.querySelector('.char-region-specialty').innerHTML = '';
+  document.querySelector('.char-region-specialty-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-daily-boss').innerHTML = '';
+  document.querySelector('.char-daily-boss-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-mobdrop-1').innerHTML = '';
+  document.querySelector('.char-mobdrop-1-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-mobdrop-2').innerHTML = '';
+  document.querySelector('.char-mobdrop-2-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-mobdrop-3').innerHTML = '';
+  document.querySelector('.char-mobdrop-3-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-stone-sliver').innerHTML = '';
+  document.querySelector('.char-stone-sliver-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-stone-fragment').innerHTML = '';
+  document.querySelector('.char-stone-fragment-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-stone-chunk').innerHTML = '';
+  document.querySelector('.char-stone-chunk-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-stone-gemstone').innerHTML = '';
+  document.querySelector('.char-stone-gemstone-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-herosWit-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-herosWit').innerHTML = '';
+  document.querySelector('.char-mora-img').src = 'Images/General/blank.png';
+  document.querySelector('.char-mora').innerHTML = '';
 }

@@ -36,6 +36,8 @@
   grid-template-columns: 100px auto;
 }
 
+
+/* slider style start */
 .slider {
   /* border: 1px solid black; */
   height: 50px;
@@ -54,10 +56,18 @@
   font-size: 15px;
   margin-top: -1px;
 }
+/* slider start end */
 
+/* character names button */
+.char-btn {
+  padding: 10px;
+  padding-right: 15px;
+  width: 225px;
+  margin-top: 5px;
+}
+
+/* chosen character profile picture start*/
 .char-profile-pic-name {
-  /* border: 1px solid black; */
-  /* position: absolute; */
   width: 101px;
   height: 148px;
 }
@@ -81,13 +91,6 @@
   z-index: -1;
 }
 
-.char-btn {
-  padding: 10px;
-  padding-right: 15px;
-  width: 225px;
-  margin-top: 5px;
-}
-
 .char-name {
   text-align: center;
   font-size: 20px;
@@ -100,24 +103,17 @@
   margin-left: -95px;
   height: 30px;
 }
+/* chosen character profile picture end */
 
+/* materials detail start */
 .detail-container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin-top: 10px;
   margin-left: -10px;
   width: 260px;
   display: grid;
   grid-template-columns: 25px auto auto;
-  /* height: 35px;
-  width: 220px; */
-  /* overflow: hidden; */
 }
-
-/* .imgContainer {
-  width: 35px;
-  height: 35px;
-  float: left;
-} */
 
 .imgContainer {
   /* border: 1px solid black; */
@@ -131,7 +127,7 @@
 
 
 .details-txt-container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   word-wrap: break-word;
   font-size: 15px;
   font-family: Calibri;
@@ -146,9 +142,10 @@
 }
 
 .materials-number {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: auto;
   font-size: 15px;
   font-family: Calibri;
   text-align: right;
 }
+/* materials detail end */

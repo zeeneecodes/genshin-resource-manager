@@ -1,7 +1,7 @@
 const characterSelection = document.querySelector('.left-container');
 
 // let the code list all the
-// character names each buttons
+// character names on each button
 
 let
   charactersArr = [],
@@ -22,7 +22,7 @@ charactersArr.forEach((chars) => {
 document.querySelector('.left-container').innerHTML = characters;
 
 
-// variables for characters and calculate button
+// variable declarations
 
 const charButton = document.querySelectorAll('.char-btn'),
   calculateButton = document.querySelector('.calculate');
@@ -41,9 +41,7 @@ let
   totalmobDrop1 = 0,
   totalmobDrop2 = 0,
   totalmobDrop3 = 0,
-  totalMora = 0,
-  startAscension = 0,
-  endAscension = 0;
+  totalMora = 0;
 
 const functionArr = [ascension1, ascension2, ascension3, ascension4, ascension5, ascension6];
 
@@ -59,7 +57,7 @@ endValue.oninput = () => {
   document.querySelector('.txt-end-level').innerHTML = `To Level: ${endValue.value}`;
 };
 
-// user will now click on the buttons
+// user will now click on calculate
 charButton.forEach((name) => {
   name.addEventListener('click', () => {
     showCharacter(name.innerHTML);
@@ -71,7 +69,18 @@ charButton.forEach((name) => {
       resetValues();
       startlvl = startValue.value;
       endlvl = endValue.value;
-      computeMaterials(startlvl,endlvl);
+      computeMoraHerosWit(startlvl,endlvl);
+      assignAscension(startlvl,endlvl);
+
+      document.querySelector('.regionSpecialtyAmount').innerHTML = totalRegionSpecialty;
+      document.querySelector('.dailyBossAmount').innerHTML = totalDailyBoss;
+      document.querySelector('.mobDrop1Amount').innerHTML = totalmobDrop1;
+      document.querySelector('.mobDrop2Amount').innerHTML = totalmobDrop2;
+      document.querySelector('.mobDrop3Amount').innerHTML = totalmobDrop3;
+      document.querySelector('.sliverStoneAmount').innerHTML = totalSliver;
+      document.querySelector('.fragmentStoneAmount').innerHTML = totalFragment;
+      document.querySelector('.chunkStoneAmount').innerHTML = totalFragment;
+      document.querySelector('.gemStoneAmount').innerHTML = totalGem;
     })
     resetMaterialsHTML();
   });
@@ -164,7 +173,7 @@ function assignElementStones(stoneTitle) {
 
 
 
-function computeMaterials(start,end) {
+function computeMoraHerosWit(start,end) {
   let
     levelToAdd = 0,
     startingLvl = start - 1,
@@ -177,62 +186,68 @@ function computeMaterials(start,end) {
   const totalHerosWit = Math.round(levelToAdd/herosWit);
   totalMora += totalHerosWit * 4000;
   document.querySelector('.char-herosWit-img').src = `Images/General/Heros Wit.png`;
-  document.querySelector('.char-herosWit').innerHTML = totalHerosWit;
+  document.querySelector('.char-herosWit').innerHTML = "Hero's Wit";
+  document.querySelector('.herosWitAmount').innerHTML = totalHerosWit;
   document.querySelector('.char-mora-img').src = `Images/General/Mora.png`;
-  document.querySelector('.char-mora').innerHTML = totalMora.toLocaleString();
-
-  assignAscension();
+  document.querySelector('.char-mora').innerHTML = 'Mora';
+  document.querySelector('.moraAmount').innerHTML = totalMora.toLocaleString();
+  
+  //assignAscension();
   calculateAscension(startAscension,endAscension);
 }
 
-function assignAscension(){
+function assignAscension(start,end){
   //function to assign the selected start level and selected end level to an ascension phase
-  for (let i = 0; i < 100; i++){
-      if (i === userInputStart) {
-          if (i >= 1 && i <= 20) {
-              startAscension = 0;
-          } else if (i >= 21 && i <= 40) {
-              startAscension = 1;
-          } else if (i >= 41 && i <= 50) {
-              startAscension = 2;
-          } else if (i >= 51 && i <= 60) {
-              startAscension = 3;
-          } else if (i >= 61 && i <= 70) {
-              startAscension = 4;
-          } else if (i >= 71 && i <= 80) {
-              startAscension = 5;
-          } else if (i >= 81 && i <= 90) {
-              startAscension = 6;
-          }
+  let ascensionStart;
+  let ascensionEnd;
+  for (let i = 1; i < 91; i++){
+    if (i == start) {
+      if (i >= 1 && i <= 20) {
+        ascensionStart = 0;
+      } else if (i >= 21 && i <= 40) {
+        ascensionStart = 1;
+      } else if (i >= 41 && i <= 50) {
+        ascensionStart = 2;
+      } else if (i >= 51 && i <= 60) {
+        ascensionStart = 3;
+      } else if (i >= 61 && i <= 70) {
+        ascensionStart = 4;
+      } else if (i >= 71 && i <= 80) {
+        ascensionStart = 5;
+      } else if (i >= 81 && i <= 90) {
+        ascensionStart = 6;
       }
+    }
   }
 
-  for (let j = 0; j < 100; j++){
-      if (j === userinputEnd) {
-          if (j >= 1 && j <= 20) {
-              endAscension = 0;
-          } else if (j >= 21 && j <= 40) {
-              endAscension = 1;
-          } else if (j >= 41 && j <= 50) {
-              endAscension = 2;
-          } else if (j >= 51 && j <= 60) {
-              endAscension = 3;
-          } else if (j >= 61 && j <= 70) {
-              endAscension = 4;
-          } else if (j >= 71 && j <= 80) {
-              endAscension = 5;
-          } else if (j >= 81 && j <= 90) {
-              endAscension = 6;
-          }
+  for (let j = 1; j < 91; j++){
+    if (j == end) {
+      if (j >= 1 && j <= 20) {
+        ascensionEnd = 0;
+      } else if (j >= 21 && j <= 40) {
+        ascensionEnd = 1;
+      } else if (j >= 41 && j <= 50) {
+        ascensionEnd = 2;
+      } else if (j >= 51 && j <= 60) {
+        ascensionEnd = 3;
+      } else if (j >= 61 && j <= 70) {
+        ascensionEnd = 4;
+      } else if (j >= 71 && j <= 80) {
+        ascensionEnd = 5;
+      } else if (j >= 81 && j <= 90) {
+        ascensionEnd = 6;
       }
+    }
   }
+  calculateAscension(ascensionStart,ascensionEnd);
 }
 
-function calculateAscension(startAscension,endAscension){
-  for (let x = startAscension; x < endAscension; x++){
+function calculateAscension(ascensionStart,ascensionEnd){
+  for (let x = ascensionStart; x < ascensionEnd; x++){
       functionArr[x]();
   }
 }
+
 
 function ascension1 () {
 	let {ascension1:{stones,regionSpecialty,mobDrop,mora}} = characterAscenscionInfo;
@@ -295,16 +310,18 @@ function ascension6() {
 // RESET EVERYTHING
 
 function resetValues() {
-  totalSliver = 0,
-  totalFragment = 0,
-  totalChunk = 0,
-  totalGem = 0,
-  totalDailyBoss = 0,
-  totalRegionSpecialty = 0,
-  totalmobDrop1 = 0,
-  totalmobDrop2 = 0,
-  totalmobDrop3 = 0,
+  totalSliver = 0;
+  totalFragment = 0;
+  totalChunk = 0;
+  totalGem = 0;
+  totalDailyBoss = 0;
+  totalRegionSpecialty = 0;
+  totalmobDrop1 = 0;
+  totalmobDrop2 = 0;
+  totalmobDrop3 = 0;
   totalMora = 0;
+  startAscension = 0;
+  endAscension = 0;
 }
 
 function resetMaterialsHTML() {
@@ -330,4 +347,7 @@ function resetMaterialsHTML() {
   document.querySelector('.char-herosWit').innerHTML = '';
   document.querySelector('.char-mora-img').src = 'Images/General/blank.png';
   document.querySelector('.char-mora').innerHTML = '';
+  document.querySelector('.moraAmount').innerHTML = '';
+  document.querySelector('.char-herosWit').innerHTML = '';
+  document.querySelector('.herosWitAmount').innerHTML = '';
 }

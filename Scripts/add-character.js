@@ -350,4 +350,13 @@ function resetMaterialsHTML() {
   document.querySelector('.moraAmount').innerHTML = '';
   document.querySelector('.char-herosWit').innerHTML = '';
   document.querySelector('.herosWitAmount').innerHTML = '';
+  document.querySelector('.regionSpecialtyAmount').innerHTML = '';
+  document.querySelector('.dailyBossAmount').innerHTML = '';
+  document.querySelector('.mobDrop1Amount').innerHTML = '';
+  document.querySelector('.mobDrop2Amount').innerHTML = '';
+  document.querySelector('.mobDrop3Amount').innerHTML ='';
+  document.querySelector('.sliverStoneAmount').innerHTML = '';
+  document.querySelector('.fragmentStoneAmount').innerHTML = '';
+  document.querySelector('.chunkStoneAmount').innerHTML = '';
+  document.querySelector('.gemStoneAmount').innerHTML = '';
 }
